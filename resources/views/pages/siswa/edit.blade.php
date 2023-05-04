@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Edit</title>
   </head>
   <body>
     <div class="container">
@@ -17,32 +17,15 @@
               Siswa
             </div>
             <div class="card-body">
-                <a href="{{route('siswa.create')}}" class="btn btn-primary mb-2">Tambah Data</a>
-                <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach ($items as $i)
-                        <tr>
-                            <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$i->nama}}</td>
-                            <td>
-                                <a href="{{route('siswa.edit', $i->id)}}" class="btn btn-warning">Edit</a>
-                                <form action="{{route('siswa.destroy', $i->id)}}" method="POST" class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="btn btn-danger">Hapus</button>
-                                </form>
-                            </td>
-                        </tr>
-                      @endforeach
-                    </tbody>
-                </table>
+              <form action="{{route('siswa.update', $item->id)}}" method="POST">
+                @method('PUT')
+                @csrf
+                <div class="form-group">
+                  <label for="nama">Nama Siswa</label>
+                  <input type="text" class="form-control" id="nama" name="nama" value="{{$item->nama}}">
+                </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </form>
             </div>
         </div>
     </div>

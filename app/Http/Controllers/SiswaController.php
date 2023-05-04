@@ -26,7 +26,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.siswa.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Siswa::create($data);
+
+        return redirect()->route('siswa.index');
     }
 
     /**
@@ -59,7 +62,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Siswa::findOrFail($id);
+        
+        return view('pages.siswa.edit', compact('item')); 
     }
 
     /**
@@ -71,7 +76,11 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $item = Siswa::findOrFail($id);
+        $item->update($data);
+
+        return redirect()->route('siswa.index');
     }
 
     /**
@@ -82,6 +91,9 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Siswa::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('siswa.index');
     }
 }
