@@ -24,6 +24,10 @@
                   <label for="nama">Nama Siswa</label>
                   <input type="text" class="form-control" id="nama" name="nama" value="{{$item->nama}}">
                 </div>
+                <div class="form-group">
+                  <label for="alamat">Alamat</label>
+                  <input type="text" class="form-control" id="alamat" name="alamat" value="{{$item->alamat}}">
+                </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
               </form>
             </div>

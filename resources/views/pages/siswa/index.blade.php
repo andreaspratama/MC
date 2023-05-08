@@ -23,6 +23,7 @@
                       <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
+                        <th scope="col">Alamat</th>
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
@@ -31,6 +32,7 @@
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$i->nama}}</td>
+                            <td>{{$i->alamat}}</td>
                             <td>
                                 <a href="{{route('siswa.edit', $i->id)}}" class="btn btn-warning">Edit</a>
                                 <form action="{{route('siswa.destroy', $i->id)}}" method="POST" class="d-inline">

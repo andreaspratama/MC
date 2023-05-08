@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Edit</title>
+    <title>Create</title>
   </head>
   <body>
     <div class="container">
@@ -22,6 +22,10 @@
                 <div class="form-group">
                   <label for="nama">Nama Siswa</label>
                   <input type="text" class="form-control" id="nama" name="nama">
+                </div>
+                <div class="form-group">
+                  <label for="alamat">Alamat</label>
+                  <input type="text" class="form-control" id="alamat" name="alamat">
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
               </form>
